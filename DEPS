@@ -3,7 +3,7 @@ use_relative_paths = True
 vars = {
   # Override root_dir in your .gclient's custom_vars to specify a custom root
   # folder name.
-  "root_dir": "trunk",
+  "root_dir": "webrtc-build",
   "extra_gyp_flag": "-Dextra_gyp_flag=0",
 
   # Use this googlecode_url variable only if there is an internal mirror for it.
@@ -15,6 +15,10 @@ vars = {
   # External resources like video and audio files used for testing purposes.
   # Downloaded on demand when needed.
   "webrtc_resources_revision": "15",
+
+  # Get webrtc source from external repo
+  "webrtc_git": "https://github.com/xhook/webrtc.git",
+  "webrtc_hash": "@64e4c0e81c61b9fce392d18fa17dde7d0fd36f75", # r3500
 }
 
 # NOTE: Prefer revision numbers to tags for svn deps. Use http rather than
@@ -87,6 +91,9 @@ deps = {
   # Needed by build/common.gypi.
   "tools/win/supalink":
     Var("chromium_trunk") + "/src/tools/win/supalink@" + Var("chromium_revision"),
+
+  "webrtc":
+    Var("webrtc_git") + Var("webrtc_hash"),
 }
 
 deps_os = {
