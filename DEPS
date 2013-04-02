@@ -18,7 +18,7 @@ vars = {
 
   # Get webrtc source from external repo
   "webrtc_git": "https://github.com/xhook/webrtc.git",
-  "webrtc_hash": "@64e4c0e81c61b9fce392d18fa17dde7d0fd36f75", # r3500
+  "webrtc_hash": "@4a3cc90e412c81c727da9a77ec15d72f0c1bcd07",
 }
 
 # NOTE: Prefer revision numbers to tags for svn deps. Use http rather than
